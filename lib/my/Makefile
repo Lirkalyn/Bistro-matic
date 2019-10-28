@@ -1,41 +1,34 @@
 ##
 ## EPITECH PROJECT, 2019
-## Makefile
+## Piscine_C_J10
 ## File description:
-## 
+## Makefile
 ##
 
-NAME 	=	libmy.a
+.PHONY : all clean fclean re
 
-SRC		=	my_putchar.c	\
-			my_putstr.c		\
-			my_put_nbr.c	\
-			my_revstr.c		\
-			my_strlen.c		\
-			my_atoi.c
+SRC	=	parser.c \
+		fill.c \
+		result.c \
+		negnbr.c \
+		my_put_nbr.c
+		\
+			fill.c			\
+			parser.c		\
+			negnbr.c		\
+			result.c
+OBJ	=	$(SRC:.c=.o)
 
-HEADERS	=	my.h			\
-			bistromatic.h
+NAME	=	eval_expr
 
-HPATH	=	./../../include/
+all:	$(OBJ)
+##	make -sC ../lib/my
+	gcc -o $(NAME) $(OBJ) -Wextra -Wall -Iinclude/
 
-OBJ		=	$(SRC:.c=.o)
+clean:
+	rm -f $(OBJ)
 
-$(NAME)	:	$(OBJ)
-			gcc -c $(SRC)
-			ar rc $(NAME) $(OBJ)
-			ranlib $(NAME)
-			cp ./$(NAME) ../
-			cp ./$(HEADERS) $(HPATH)
+fclean:	clean
+	rm -f $(NAME)
 
-clean	:
-			rm -f $(OBJ)
-
-fclean	:	clean
-			rm -f $(NAME)
-			rm -f ../$(NAME)
-			rm -f $(HPATH)$(HEADERS)
-
-re		:	fclean $(NAME)
-
-.PHONY	:	$(NAME) clean fclean re
+re:	fclean all
