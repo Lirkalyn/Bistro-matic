@@ -5,17 +5,16 @@
 ## 
 ##
 
-NAME 	=	calc
+NAME	=	calc
 
-SRC	=	$(NAME).c		\
-		main.c
+SRC		=	main.c	
 
-HPATH   =       ./include/
+HPATH   =	./include/
 
-HEADERS =       ./lib/my/my.h		\
-		./lib/my/bistromatic.h
+HEADERS =   ./lib/my/my.h \
+			./lib/my/bistromatic.h
 
-OBJ	=	$(SRC:.c=.o)
+OBJ		=	$(SRC:.c=.o)
 
 all:		headers $(NAME)
 

@@ -11,7 +11,8 @@ SRC	=	my_putchar.c	\
 		my_putstr.c	\
 		my_put_nbr.c	\
 		my_revstr.c	\
-		my_strlen.c
+		my_strlen.c	\
+		my_atoi.c
 
 HEADERS	=	my.h		\
 		bistromatic.h
