@@ -6,7 +6,7 @@
 */
 
 #include <stdlib.h>
-#include "include/eval_expr.h"
+#include "eval_expr.h"
 
 void fill_new_str(char *str, int res, char *new_str, int res_size)
 {

@@ -7,34 +7,23 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "include/eval_expr.h"
+#include "eval_expr.h"
 
-int pre_clac_fork(char *calc, int len)
+int pre_clac_fork(char *calc_poi, int len, int signes)
 {
-    int *num;
+    char **num;
     int i;
     int pos = 0;
-    int signes = 0;
     char *op;
     int res;
 
-    nbr_signes(calc, &signes);
-    num = (int *)malloc((signes + 1) * sizeof(int));
+    num = (char **)malloc((signes + 2) * sizeof(int));
+    num[(signes + 1)] = 0;
     op = (char *)malloc((signes + 1) * sizeof(char));
     op[signes] = '\0';
-    //put_zero(num, (signes + 1));
-    for (i = 0 ; calc[i] != '\0'; i++) {
-        if (calc[i] >= '0' && calc[i] <= '9')
-            num[pos] = ((num[pos] * 10) + (calc[i] - '0'));
-        if (calc[(i + 1)] == '+' || calc[(i + 1)] == '-'
-            || calc[(i + 1)] == '*' || calc[(i + 1)] == '/'
-            || calc[(i + 1)] == '%') {
-            op[pos] = calc[(i + 1)];
-            pos++;
-            i++;
-            }
-    }
-    //isnum_neg(calc, num, pos);
+    calc_num_size(calc_poi, num);
+    put_zero(num);
+    fill_num(calc_poi, num, op);
     return calc_fork(num, op, signes);
 }
 
@@ -59,75 +48,62 @@ void find_bra(char *str, int *first_close_bra, _Bool *find, int *last_open_bra)
     }
 }
 
-char *brackets(char *str, int len)
+char *brackets(char *expr, int len)
 {
     int i;
     int j = 0;
     int first_close_bra = -1;
     _Bool find = 0;
     int last_open_bra = -1;
-    char *calc;
+    char *calc_poi;
     int res;
+    int signes = 0;
 
-    find_bra(str, &first_close_bra, &find, &last_open_bra);
+    find_bra(expr, &first_close_bra, &find, &last_open_bra);
     if (first_close_bra == -1)
-        return str;
-    calc = (char *)malloc((first_close_bra - last_open_bra) * sizeof(char));
-    calc[(first_close_bra - last_open_bra - 1)] = '\0';
-    for (i = (last_open_bra + 1); i <= (first_close_bra - 1); i++) {
-        calc[j] = str[i];
-        j++;
-    }
-    res = pre_clac_fork(calc, (last_open_bra - first_close_bra - 1));
-    for (i = last_open_bra; i <= first_close_bra; i++) {
-        str[i] = 'a';
-    }
-    str = replace_str(str, res);
+        return expr;
+    calc_poi = (char *)malloc((first_close_bra - last_open_bra) * sizeof(char));
+    calc_poi[(first_close_bra - last_open_bra - 1)] = '\0';
+    fill_calc_poi(last_open_bra, first_close_bra, calc_poi, expr);
+    nbr_signes(calc_poi, &signes);
+    res = pre_clac_fork(calc_poi, (last_open_bra - first_close_bra - 1), &signes);
+    fill_expr_w_a(last_open_bra, first_close_bra, expr);
+    expr = replace_expr(expr, res);
     if (first_close_bra != -1)
-        brackets(str, len);
+        brackets(expr, len);
 }
 
-int parser_comme_jaja(const char *str)
+int parsayaya(char const *av1, char const *av2,
+        char const *expr, unsigned int size)
 {
     int i;
-    int len;
     char *res;
-    char *stt;
+    char *str;
     int result = 0;
-    _Bool neg = 0;
 
-    for (len = 0; str[len] != '\0'; len++);
-    res = (char *)malloc((len + 3) * sizeof(char));
+    res = (char *)malloc((size + 3) * sizeof(char));
     res[0] = '(';
-    res[(len + 1)] = ')';
-    res[(len + 2)] = '\0';
-    for (i = 0; str[i] != '\0'; i++)
-        res[i + 1] = str[i];
-    stt = brackets(res, len);
-    for (i = 0; stt[i] != '\0'; i++) {
-        if (stt[0] == '-' && neg == 0) {
-            neg = 1;
-            i++;
-        }
-        result = ((result * 10) + (stt[i] - '0'));
-        }
-        if (neg == 1)
-            result *= (-1);
+    res[(size + 1)] = ')';
+    res[(size + 2)] = '\0';
+    for (i = 0; i < size; i++)
+        res[i + 1] = expr[i];
+    str = brackets(res, size);
     return result;
 }
 
-int eval_expr(char const *str)
+int eval_expr(char const *av1, char const *av2,
+        char const *expr, unsigned int size)
 {
     int i;
     int brackets = 0;
 
-    for (i = 0; str[i] != '\0'; i++) {
-        if (str[i] == '(')
+    for (i = 0; expr[i] != '\0'; i++) {
+        if (expr[i] == '(')
             brackets++;
-        else if (str[i] == ')')
+        else if (expr[i] == ')')
             brackets--;
     }
     if (brackets != 0)
         return 84;
-    return parser_comme_jaja(str);
+    return parsayaya(av1, av2, expr, size);
 }

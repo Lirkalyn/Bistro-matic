@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2019
 ** main
 ** File description:
-**
+** Poi, rippu, ayaya, PADORU, PADORU parser comme jaja;
 */
 
 #include <stdlib.h>
