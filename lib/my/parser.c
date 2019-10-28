@@ -20,7 +20,7 @@ int pre_clac_fork(char *calc_poi, int len, int signes)
     num = (char **)malloc((signes + 2) * sizeof(int));
     num[(signes + 1)] = 0;
     op = (char *)malloc((signes + 1) * sizeof(char));
-    op[signes] = '\0';
+    op[signes] = '\0'; 
     calc_num_size(calc_poi, num);
     put_zero(num);
     fill_num(calc_poi, num, op);
