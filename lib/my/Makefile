@@ -16,7 +16,8 @@ SRC		=	my_putchar.c	\
 			fill.c			\
 			parser.c		\
 			result.c		\
-			negnbr.c
+			negnbr.c        \
+			fill2.c
 
 HEADERS	=	my.h			\
 			bistromatic.h	\

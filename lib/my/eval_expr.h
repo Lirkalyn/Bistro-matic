@@ -30,5 +30,7 @@ void fill_expr_w_a(int last_open_bra, int first_close_bra, char *expr);
 void calc_num_size(char *calc_poi, char **num);
 void fill_num(char *calc_poi, char **num, char *op);
 void put_zero(char **num);
+void padosum(int *num, char *op, int *signes);
+void padofactor(int *num, char *op, int *signes);
 
 #endif
