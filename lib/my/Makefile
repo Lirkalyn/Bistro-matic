@@ -12,7 +12,6 @@ SRC		=	my_putchar.c	\
 			my_put_nbr.c	\
 			my_revstr.c		\
 			my_strlen.c		\
-			my_intstrlen.c 	\
 			my_atoi.c		\
 			fill.c			\
 			parser.c		\
