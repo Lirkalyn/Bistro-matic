@@ -7,33 +7,36 @@
 
 #include "eval_expr.h"
 
-int factor(int *num, char operand, int signes, int pos)
+int factor(char **num, char operand, int signes, int pos)
 {
     int i;
-
+/*
     if (operand == '*')
         num[pos] = (num[pos] * num[(pos + 1)]);
     else if (operand == '/')
         num[pos] = (num[pos] / num[(pos + 1)]);
     else
-        num[pos] = (num[pos] % num[(pos + 1)]);
+        num[pos] = (num[pos] % num[(pos + 1)]);*/
 }
 
-int sum(int *num, char operand, int signes, int pos)
-{
+int sum(char **num, char operand, int signes, int pos)
+{/*
     if (operand == '+')
         num[0] = (num[(0)] + num[1]);
     else if (operand == '-')
-        num[0] = (num[(0)] - num[1]);
+        num[0] = (num[(0)] - num[1]);*/
 }
 
-int calc_fork(int *num, char *op, int signes)
+char *calc_fork(char **num, char *op, int signes)
 {
     int i;
     int j;
     int si = signes;
 
-    for (i = 0; i < si; i++) {
+    printf("op = %s\n", op);
+//    padofactor(*num, *op, &signes);
+//    padosum(*num, *op, &signes);
+/*    for (i = 0; i < si; i++) {
         if (op[i] == '*' || op[i] == '/' || op[i] == '%') {
             factor(num, op[i], signes, i);
             for (j = i; j < signes; j++) {
@@ -45,7 +48,7 @@ int calc_fork(int *num, char *op, int signes)
             signes--;
         i = 0;
         }
-    }
+    } // op, num, signes, 
     for (i = 0; i < si; i++) {
         if (op[0] == '+' || op[0] == '-') {
             sum(num, op[0], signes, i);
@@ -58,10 +61,11 @@ int calc_fork(int *num, char *op, int signes)
             signes--;
             i = 0;
         }
-    }
-    if (op[0] != '\0')
-        calc_fork(num, op, signes);
-    return num[0];
+    }*/
+//    if (op[0] != '\0')
+//        calc_fork(num, op, signes);
+//    return num[0];
+    return "14";
 }
 
 int nbr_signes(char *calc, int *signes)
@@ -74,13 +78,3 @@ int nbr_signes(char *calc, int *signes)
             *signes += 1;
     }
 }
-/*
-void put_zero(int *num,  int len)
-{
-    int i;
-
-    for (i = 0; i < len; i++) {
-        num[i] = 0;
-    }
-}
-*/

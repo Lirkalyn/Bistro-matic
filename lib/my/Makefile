@@ -2,7 +2,7 @@
 ## EPITECH PROJECT, 2019
 ## Makefile
 ## File description:
-## 
+## fghj
 ##
 
 NAME	=	libmy.a
@@ -14,10 +14,11 @@ SRC		=	my_putchar.c	\
 			my_strlen.c		\
 			my_atoi.c		\
 			fill.c			\
+			fill2.c			\
 			parser.c		\
 			result.c		\
+			result2.c		\
 			negnbr.c        \
-			fill2.c
 
 HPATH	=	./../../include/
 

@@ -7,7 +7,7 @@
 
 #include "eval_expr.h"
 
-void padofactor(int *num, char *op, int *signes)
+void padofactor(char **num, char *op, int *signes)
 {
     int i;
     int j;
@@ -28,7 +28,7 @@ void padofactor(int *num, char *op, int *signes)
     } // op, num, signes, 
 }
 
-void padosum(int *num, char *op, int *signes)
+void padosum(char **num, char *op, int *signes)
 {
     int i;
     int j;
