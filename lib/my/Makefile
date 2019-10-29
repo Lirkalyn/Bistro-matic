@@ -12,16 +12,13 @@ SRC		=	my_putchar.c	\
 			my_put_nbr.c	\
 			my_revstr.c		\
 			my_strlen.c		\
+			my_intstrlen.c 	\
 			my_atoi.c		\
 			fill.c			\
 			parser.c		\
 			result.c		\
 			negnbr.c        \
 			fill2.c
-
-HEADERS	=	my.h			\
-			bistromatic.h	\
-			eval_expr.h
 
 HPATH	=	./../../include/
 
@@ -32,7 +29,9 @@ $(NAME)	:	$(OBJ)
 			ar rc $(NAME) $(OBJ)
 			ranlib $(NAME)
 			cp ./$(NAME) ../
-			cp ./$(HEADERS) $(HPATH)
+			cp ./my.h $(HPATH)
+			cp ./bistromatic.h $(HPATH)
+			cp ./eval_expr.h $(HPATH)
 
 clean	:
 			rm -f $(OBJ)
@@ -40,7 +39,7 @@ clean	:
 fclean	:	clean
 			rm -f $(NAME)
 			rm -f ../$(NAME)
-			rm -f $(HPATH)$(HEADERS)
+			rm -f $(HPATH)*
 
 re		:	fclean $(NAME)
 
