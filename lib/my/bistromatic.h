@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2019
 ** bistromatic
 ** File description:
-**
+** .h for bistromatic
 */
 
 #define OP_OPEN_PARENT_IDX  0

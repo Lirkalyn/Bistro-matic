@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2019
 ** my.h
 ** File description:
-** h
+** all basic function
 */
 
 #ifndef _MY_H_

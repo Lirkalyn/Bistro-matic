@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2019
 ** eval_expr
 ** File description:
-** all functions
+** all functions to make work eval_expr
 */
 
 
@@ -36,7 +36,7 @@ void find_a(char *str, int *last_a_pos, int *num_a);
 int is_nbr1_smaller(char *nbr1, char *nbr2);
 char *sub_remain_dig(char *number1, char *result, int diff, int carry);
 char *sub(char *number1, char *number2, int diff, int neg);
-char *prepare_sub(char * number1, char * number2);
+char *prepare_sub(char *number1, char *number2);
 char *el_multiplicator(char *num1, char *num2);
 char *el_additionator(int l, char **res, char *num1, char *num2);
 char *returnator(char *result, char *num1, char *num2);

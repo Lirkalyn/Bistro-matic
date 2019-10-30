@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2019
 ** sub
 ** File description:
-** ayaya to complete ayaya
+** Make substraction
 */
 
 #include <stdlib.h>
@@ -68,7 +68,7 @@ char *sub(char *number1, char *number2, int diff, int neg)
     return (result);
 }
 
-char *prepare_sub(char * number1, char * number2)
+char *prepare_sub(char *number1, char *number2)
 {
     char *empty;
     int diff;

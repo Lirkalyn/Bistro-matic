@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2019
-** d
+** negnbr
 ** File description:
-** d
+** functions to make eval_expr work if the number is negative
 */
 
 #include <stdlib.h>

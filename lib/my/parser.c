@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2019
-** bootstrap-evalexpr
+** parser-evalexpr
 ** File description:
-** le parsing ça passe
+** Parser for eval_expr
 */
 
 #include <stdio.h>

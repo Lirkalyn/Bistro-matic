@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2019
-** bootstrap-evalexpr
+** result-evalexpr
 ** File description:
-** just for result
+** file just for the result
 */
 
 #include <stdlib.h>

@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2019
 ** my_atoi
 ** File description:
-** 
+** fonction my_atoi
 */
 
 int my_atoi(char *lol)
