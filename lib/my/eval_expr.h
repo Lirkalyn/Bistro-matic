@@ -37,5 +37,8 @@ int is_nbr1_smaller(char *nbr1, char *nbr2);
 char *sub_remain_dig_of_ayaya(char *number1, char *result, int diff, int carry);
 char *sub_my_ayaya(char *number1, char *number2, int diff, int neg);
 char *prepare_sub_my_ayaya(char * number1, char * number2);
+char *el_multiplicator(char *num1, char *num2);
+char *el_additionator(int l, char **res, char *num1, char *num2);
+char *returnator(char *result, char *num1, char *num2);
 
 #endif
