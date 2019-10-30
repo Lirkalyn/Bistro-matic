@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2019
-** main
+** main-bistro
 ** File description:
-** Poi, rippu, ayaya, PADORU, PADORU parser comme jaja;
+** main of bistromatic
 */
 
 #include <stdlib.h>
