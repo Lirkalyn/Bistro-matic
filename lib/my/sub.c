@@ -32,7 +32,7 @@ int is_nbr1_smaller(char *nbr1, char *nbr2)
     return (0);
 }
 
-char *sub_remain_dig_of_ayaya(char *number1, char *result, int diff, int carry)
+char *sub_remain_dig(char *number1, char *result, int diff, int carry)
 {
     for (int i = diff - 1; i >= 0; i--)
     {
@@ -45,7 +45,7 @@ char *sub_remain_dig_of_ayaya(char *number1, char *result, int diff, int carry)
     }
 }
 
-char *sub_my_ayaya(char *number1, char *number2, int diff, int neg)
+char *sub(char *number1, char *number2, int diff, int neg)
 {
     int carry = 0;
     int sub;
@@ -62,13 +62,13 @@ char *sub_my_ayaya(char *number1, char *number2, int diff, int neg)
             carry = 0;
         result[i] = NTA(sub);
     }
-    sub_remain_dig_of_ayaya(number1, result, diff, carry);
+    sub_remain_dig(number1, result, diff, carry);
     if (neg == 1)
         result[0] = '-';
     return (result);
 }
 
-char *prepare_sub_my_ayaya(char * number1, char * number2)
+char *prepare_sub(char * number1, char * number2)
 {
     char *empty;
     int diff;
@@ -82,6 +82,6 @@ char *prepare_sub_my_ayaya(char * number1, char * number2)
         neg = 1;
     }
     diff = my_strlen(number1) - my_strlen(number2);
-    result = sub_my_ayaya(number1, number2, diff, neg);
+    result = sub(number1, number2, diff, neg);
     return (result);
 }
