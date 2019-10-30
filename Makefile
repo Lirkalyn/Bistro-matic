@@ -2,12 +2,12 @@
 ## EPITECH PROJECT, 2019
 ## Makefile
 ## File description:
-## 
+## Makefile for the main of bistromatic
 ##
 
 NAME	=	calc
 
-SRC		=	main.c	
+SRC		=	main.c
 
 HPATH   =	./include/
 
