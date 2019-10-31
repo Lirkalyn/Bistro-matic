@@ -18,10 +18,14 @@ int is_nbr1_smaller(char *nbr1, char *nbr2)
     int l1 = my_strlen(nbr1);
     int l2 = my_strlen(nbr2);
     int i;
+    int j;
+    int k;
 
-    if (l1 < l2)
+    for (j = 0 ; nbr1[j] == '0' ; j++);
+    for (k = 0 ; nbr2[k] == '0'; k++);
+    if (l1 - j < l2 - k)
         return (1);
-    if (l2 < l1)
+    if (l2 - k < l1 - j)
         return (0);
     for (i = 0; i < l1; i++) {
         if (ATN(nbr1[i]) < ATN(nbr2[i]))
@@ -34,11 +38,13 @@ int is_nbr1_smaller(char *nbr1, char *nbr2)
 
 char *sub_remain_dig(char *number1, char *result, int diff, int carry)
 {
+    int sub;
+
     for (int i = diff - 1; i >= 0; i--)
     {
         if (number1[i] == '0' && carry > 0)
-            result[i] = '9';
-        int sub = (ATN(number1[i]) - carry);
+            result[i] = NTA(9);
+        sub = (ATN(number1[i]) - carry);
         if (i > 0 || sub > 0)
             result[i] = NTA(sub);
         carry = 0;
