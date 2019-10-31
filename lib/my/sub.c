@@ -21,7 +21,7 @@ int is_nbr1_smaller(char *nbr1, char *nbr2)
 
     if (l1 < l2)
         return (1);
-    if (l2 > l1)
+    if (l2 < l1)
         return (0);
     for (i = 0; i < l1; i++) {
         if (ATN(nbr1[i]) < ATN(nbr2[i]))
@@ -37,7 +37,7 @@ char *sub_remain_dig(char *number1, char *result, int diff, int carry)
     for (int i = diff - 1; i >= 0; i--)
     {
         if (number1[i] == '0' && carry > 0)
-            result[i] = NTA(9);
+            result[i] = '9';
         int sub = (ATN(number1[i]) - carry);
         if (i > 0 || sub > 0)
             result[i] = NTA(sub);
