@@ -6,8 +6,8 @@
 */
 
 #include <stdlib.h>
-#include "include/eval_expr.h"
-#include "include/my.h"
+#include "eval_expr.h"
+#include "my.h"
 
 char *el_divisator(char *numer, char *denom)
 {
