@@ -43,7 +43,7 @@ char *sub_remain_dig(char *number1, char *result, int diff, int carry)
     for (int i = diff - 1; i >= 0; i--)
     {
         if (number1[i] == '0' && carry > 0)
-            result[i] = NTA(9);
+            result[i] = '9';
         sub = (ATN(number1[i]) - carry);
         if (i > 0 || sub > 0)
             result[i] = NTA(sub);
@@ -74,12 +74,25 @@ char *sub(char *number1, char *number2, int diff, int neg)
     return (result);
 }
 
+char *zero_for_nbr2(char *number1, char *number2, int diff)
+{
+    char *num2 = "";
+
+    num2 = malloc(sizeof(char) * (my_strlen(number1)));
+    for (int i = 0; i != my_strlen(number1); i++)
+        num2[i] = '0';
+    for (int i = my_strlen(number1); i >= my_strlen(number1) - diff; i--)
+        num2[i - my_strlen(number2) + diff] = number2[i - my_strlen(number2)];
+    return (num2);
+}
+
 char *prepare_sub(char *number1, char *number2)
 {
     char *empty;
     int diff;
     int neg = 0;
     char *result;
+    char *num2 = "";
 
     if (is_nbr1_smaller(number1, number2) == 1){
         empty = number1;
@@ -87,6 +100,8 @@ char *prepare_sub(char *number1, char *number2)
         number2 = empty;
         neg = 1;
     }
+    diff = my_strlen(number1) - my_strlen(number2);
+    number2 = zero_for_nbr2(number1, number2, diff);
     diff = my_strlen(number1) - my_strlen(number2);
     result = sub(number1, number2, diff, neg);
     return (result);
