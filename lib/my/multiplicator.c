@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2019
 ** multiplicator
 ** File description:
-** make multiplication
+** Ceci va gérer les multiplications.
 */
 
 #include <stdlib.h>
@@ -11,13 +11,13 @@
 
 char *el_multiplicator(char *num1, char *num2)
 {
-    char **res;
+    char **res; 
     int l = 0, carry = 0, tmp = 0;
     if ( my_strlen(num1) > my_strlen(num2) )
-        res = malloc(sizeof(char *) * my_strlen(num1) + 1);
-    else res = malloc(sizeof(char *) * my_strlen(num2) + 1);
-    for (int i = my_strlen(num1) - 1 ; i != 0 ; i--, l++ ) {
-        res[l] = malloc(sizeof(char *) * my_strlen(num1) + my_strlen(num2) + 1);
+        res = malloc(sizeof(char*) * my_strlen(num1) + 1);
+    else res = malloc(sizeof(char*) * my_strlen(num2) + 1); 
+    for ( int i = my_strlen(num1) - 1 ; i != 0 ; i--, l++ ) {
+        res[l] = malloc(sizeof(char*) * my_strlen(num1) + my_strlen(num2) + 1);
         for ( int k = 0 ; k != l ; k++ )
             res[l][k] = '0';
         for ( int j = my_strlen(num2) - 1, c = l ; j != 0 ; j--, c++ ) {
@@ -32,7 +32,7 @@ char *el_multiplicator(char *num1, char *num2)
     return (el_additionator(l - 1, res, num1, num2));
 }
 
-char *el_additionator(int l, char **res, char *num1, char *num2)
+char *el_additionator(int l, char** res, char *num1, char *num2)
 {
     int tmp, carry = 0, k = -1;
     char *result;
@@ -56,9 +56,13 @@ char *returnator(char *result, char *num1, char *num2)
 {
     int i = my_strlen(result);
     if ( num1[0] == '-' && num2[0] == '-' ) {
+        result[i] = '0';
         return (my_revstr(result));
     } else if ( num1[0] == '-' || num2[0] == '-' ) {
         result[i] = '-';
         return (my_revstr(result));
-    } else return (my_revstr(result));
+    } else {
+        result[i] = '0';
+        return (my_revstr(result));
+    }
 }
