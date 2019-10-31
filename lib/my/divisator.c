@@ -9,6 +9,6 @@
 #include "eval_expr.h"
 #include "my.h"
 
-char *el_multiplicator(char *num1, char *num2)
+char *el_divisator(char *num1, char *num2)
 {
 }
