@@ -44,5 +44,9 @@ int eval_expr(char const *av1, char const *av2,
 char const *expr, unsigned int size);
 void find_bra(char *str, int *first_close_bra,
         _Bool *find, int *last_open_bra);
+int nbr1_smaller(char *nbr1, char *nbr2);
+char *el_calculator(char *numer, char *denom);
+char *el_cutator(char *numer, char *denom);
+char *el_divisator(char *numer, char *denom);
 
 #endif
