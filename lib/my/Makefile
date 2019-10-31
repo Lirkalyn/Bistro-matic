@@ -20,7 +20,8 @@ SRC		=	my_putchar.c	\
 			result2.c		\
 			negnbr.c        \
 			sub.c			\
-			multiplicator.c
+			multiplicator.c	\
+			divisator.c
 
 HPATH	=	./../../include/
 
