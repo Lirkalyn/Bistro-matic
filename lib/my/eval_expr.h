@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2019
 ** eval_expr
 ** File description:
-** all functions to make work eval_expr
+** all functions
 */
 
 
@@ -24,7 +24,7 @@ void my_putchar(char c);
 int my_put_nbr(int nb);
 void fill_calc_poi(int last_open_bra, int first_close_bra,
         char *calc_poi, char *expr);
-int parsayaya(char const *av1, char const *av2,
+char *parsayaya(char const *av1, char const *av2,
         char const *expr, unsigned int size);
 void fill_expr_w_a(int last_open_bra, int first_close_bra, char *expr);
 void calc_num_size(char *calc_poi, char **num);
@@ -34,11 +34,15 @@ void padofactor(char **num, char *op, int *signes);
 void padosum(char **num, char *op, int *signes);
 void find_a(char *str, int *last_a_pos, int *num_a);
 int is_nbr1_smaller(char *nbr1, char *nbr2);
-char *sub_remain_dig(char *number1, char *result, int diff, int carry);
-char *sub(char *number1, char *number2, int diff, int neg);
-char *prepare_sub(char *number1, char *number2);
+char *sub_remain_dig_of_ayaya(char *number1, char *result, int diff, int carry);
+char *sub_my_ayaya(char *number1, char *number2, int diff, int neg);
+char *prepare_sub_my_ayaya(char * number1, char * number2);
 char *el_multiplicator(char *num1, char *num2);
 char *el_additionator(int l, char **res, char *num1, char *num2);
 char *returnator(char *result, char *num1, char *num2);
+int eval_expr(char const *av1, char const *av2,
+char const *expr, unsigned int size);
+void find_bra(char *str, int *first_close_bra,
+        _Bool *find, int *last_open_bra);
 
 #endif

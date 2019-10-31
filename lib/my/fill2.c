@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2019
 ** bistro
 ** File description:
-** second file to make work eval_expr
+** wesh
 */
 
 #include "eval_expr.h"
@@ -25,7 +25,7 @@ void padofactor(char **num, char *op, int *signes)
             *signes -= 1;
         i = 0;
         }
-    } // op, num, signes, 
+    }
 }
 
 void padosum(char **num, char *op, int *signes)

@@ -1,0 +1,1 @@
+gcc -o unit_tests4 tests/test_negnbr.c tests/test_negnbr_2.c  --coverage -lcriterion -Llib/ -I../lib/my/ -lmy

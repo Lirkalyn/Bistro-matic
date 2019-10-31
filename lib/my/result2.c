@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2019
-** result-bistro
+** bistro
 ** File description:
-** file for the result (for bistromatic)
+** zert
 */
 
 void find_a(char *str, int *last_a_pos, int *num_a)

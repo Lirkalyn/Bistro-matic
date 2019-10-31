@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2019
 ** bootstrap-evalexpr
 ** File description:
-** first file to make work eval_expr
+** just put 0 LOL
 */
 
 #include "eval_expr.h"

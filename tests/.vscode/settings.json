@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "racket": "racket",
+        "criterion.h": "c",
+        "eval_expr.h": "c"
+    }
+}
