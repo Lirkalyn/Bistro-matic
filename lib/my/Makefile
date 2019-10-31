@@ -21,7 +21,7 @@ SRC		=	my_putchar.c	\
 			negnbr.c        \
 			sub.c			\
 			multiplicator.c	\
-			divisator.c
+			my_strcpy.c
 
 HPATH	=	./../../include/
 
