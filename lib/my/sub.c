@@ -101,7 +101,7 @@ char *prepare_sub(char *number1, char *number2)
         neg = 1;
     }
     diff = my_strlen(number1) - my_strlen(number2);
-    if (diff != 0) {
+    if (diff != 0 && diff != 1) {
         number2 = zero_for_nbr2(number1, number2, diff);
         diff = my_strlen(number1) - my_strlen(number2);
     }
