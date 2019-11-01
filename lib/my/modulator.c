@@ -23,10 +23,10 @@ char *el_modulator(char *numer, char *denom)
         my_strcpy(cpy_denom, denom);
         cpy_numer[0] = '0';
         cpy_denom[0] = '0';
-        rest = el_calc(cpy_numer, cpy_denom);
+        rest = modulo(cpy_numer, cpy_denom);
         rest[0] = '-';
         return (rest);
-    } else return (el_calc(numer, denom));
+    } else return (modulo(numer, denom));
 }
 
 char *modulo(char *numer, char *denom)
@@ -38,7 +38,7 @@ char *modulo(char *numer, char *denom)
     for (int j = my_strlen(dif) - 1 ; numer[j] != '\0' ; j++, c++) {
         tmp = malloc(sizeof(char) * my_strlen(denom) * my_strlen(numer) + 1);
         for (int i = 0 ; tmp[0] != '-' ; i++) {
-            tmp = el_prepstractor(dif, denom);
+            tmp = el_soustractor(dif, denom);
             if (tmp[0] != '-')
                 dif = tmp, cpt++;
         }
