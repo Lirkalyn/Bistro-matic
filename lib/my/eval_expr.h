@@ -48,5 +48,9 @@ int nbr1_smaller(char *nbr1, char *nbr2);
 char *el_calculator(char *numer, char *denom);
 char *el_cutator(char *numer, char *denom);
 char *el_divisator(char *numer, char *denom);
+char *el_prepstractor(char *num1, char *num2);
+char *el_soustractor(char *num1, char *num2);
+int isit_smaller(char *nbr1, char *nbr2);
+char *el_soureturnator(char *num1, char *num2, char *result);
 
 #endif
