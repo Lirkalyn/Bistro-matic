@@ -54,5 +54,8 @@ char *substraction(char *num1, char *num2);
 char *el_soureturnator(char *num1, char *num2, char *result);
 char *el_modulator(char *numer, char *denom);
 char *modulo(char *numer, char *denom);
+char *el_sumator(char *num1, char *num2);
+char *addsum(char *num1, char *num2);
+char *sum_result(char *num1, char *num2, char *result);
 
 #endif

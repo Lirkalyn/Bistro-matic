@@ -24,6 +24,7 @@ SRC		=	my_putchar.c	\
 			divisator.c		\
 			soustractor.c	\
 			modulator.c 	\
+			sumator.c		\
 			my_strcpy.c
 
 HPATH	=	./../../include/
