@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2019
 ** soustractor
 ** File description:
-** Ceci va probablement gérer les soustractions
+** Ceci va gérer les soustractions
 */
 
 #include <stdlib.h>
@@ -33,14 +33,34 @@ char *el_soustractor(char *num1, char *num2)
     } else {
         if (nbr1_smaller(num1, num2) == 1)
             return (el_soureturnator(num1, num2, substraction(num1, num2)));
-        else return el_soureturnator(num1, num2, substraction(num2, num1));
+        else return (el_soureturnator(num1, num2, substraction(num2, num1)));
     }
 }
 
 char *el_soureturnator(char *num1, char *num2, char *result)
 {
     int i = my_strlen(result);
-    if (nbr1_smaller(num1, num2) == 1 && my_strlen(num1) <= my_strlen(num2)) {
+    char *tmp_n1 = malloc(sizeof(num1));
+    char *tmp_n2 = malloc(sizeof(num2));
+    my_strcpy(tmp_n1, num1);
+    my_strcpy(tmp_n2, num2);
+    tmp_n1[0] = '0';
+    tmp_n2[0] = '0';
+    if (num1[0] == '-' && num2[0] != '-') {
+        result = el_sumator(tmp_n1, tmp_n2);
+        result[0] = '-';
+        return (result);
+    } else if (num2[0] == '-' && num1[0] != '-') {
+        result = el_sumator(tmp_n1, tmp_n2);
+        return (result);
+    } else if (num1[0] == '-' && num2[0] == '-') {
+        result = el_soustractor(tmp_n2, tmp_n1);
+        if (nbr1_smaller(num1, num2) == 1)
+            result[0] = '0';
+        else result[0] = '-';
+        return (result);
+    } else if (nbr1_smaller(num1, num2) == 1 &&
+    my_strlen(num1) <= my_strlen(num2)) {
         if (result[i - 1] != '0')
             result[i] = '-';
         else result[i - 1] = '-';
