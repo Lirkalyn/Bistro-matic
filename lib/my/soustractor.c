@@ -9,7 +9,7 @@
 #include "my.h"
 #include "eval_expr.h"
 
-char *el_prepstractor(char *num1, char *num2)
+char *el_soustractor(char *num1, char *num2)
 {
     int l1 = my_strlen(num1);
     int l2 = my_strlen(num2);
@@ -21,7 +21,7 @@ char *el_prepstractor(char *num1, char *num2)
         for (int i = l1 ; i != l2 ; i++)
             tmp_num[i] = '0';
         my_revstr(tmp_num);
-        return (el_soureturnator(num1, num2, el_soustractor(tmp_num, num2)));
+        return (el_soureturnator(num1, num2, substraction(tmp_num, num2)));
     } else if (l2 < l1) {
         tmp_num = malloc(sizeof(num1));
         my_strcpy(tmp_num, num2);
@@ -29,18 +29,18 @@ char *el_prepstractor(char *num1, char *num2)
         for (int i = l2 ; i != l1 ; i++)
             tmp_num[i] = '0';
         my_revstr(tmp_num);
-        return (el_soureturnator(num1, num2, (el_soustractor(tmp_num, num1))));
+        return (el_soureturnator(num1, num2, (substraction(tmp_num, num1))));
     } else {
-        if (isit_smaller(num1, num2) == 1)
-            return (el_soureturnator(num1, num2, el_soustractor(num1, num2)));
-        else return el_soureturnator(num1, num2, el_soustractor(num2, num1));
+        if (nbr1_smaller(num1, num2) == 1)
+            return (el_soureturnator(num1, num2, substraction(num1, num2)));
+        else return el_soureturnator(num1, num2, substraction(num2, num1));
     }
 }
 
 char *el_soureturnator(char *num1, char *num2, char *result)
 {
     int i = my_strlen(result);
-    if (isit_smaller(num1, num2) == 1 && my_strlen(num1) <= my_strlen(num2)) {
+    if (nbr1_smaller(num1, num2) == 1 && my_strlen(num1) <= my_strlen(num2)) {
         if (result[i - 1] != '0')
             result[i] = '-';
         else result[i - 1] = '-';
@@ -52,7 +52,7 @@ char *el_soureturnator(char *num1, char *num2, char *result)
     }
 }
 
-char *el_soustractor(char *num1, char *num2)
+char *substraction(char *num1, char *num2)
 {
     int tmp;
     int c = 0;
@@ -70,21 +70,4 @@ char *el_soustractor(char *num1, char *num2)
         result[c] = tmp + '0';
     }
     return (result);
-}
-
-int isit_smaller(char *nbr1, char *nbr2)
-{
-    int l1 = my_strlen(nbr1);
-    int l2 = my_strlen(nbr2);
-    int i;
-
-    if (l1 < l2)
-        return (1);
-    for (i = 0; i < l1; i++) {
-        if (nbr1[i] - '0' < nbr2[i] - '0')
-            return (1);
-        else if (nbr1[i] - '0' > nbr2[i] - '0')
-            return (0);
-    }
-    return (0);
 }
