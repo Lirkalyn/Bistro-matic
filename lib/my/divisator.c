@@ -22,16 +22,16 @@ char *el_divisator(char *numer, char *denom)
         my_strcpy(cpy_denom, denom);
         cpy_numer[0] = '0';
         cpy_denom[0] = '0';
-        return (el_calculator(cpy_numer, cpy_denom));
+        return (divide(cpy_numer, cpy_denom));
     } else if (numer[0] == '-' || denom[0] == '-') {
         my_strcpy(cpy_numer, numer);
         my_strcpy(cpy_denom, denom);
         cpy_numer[0] = '0';
         cpy_denom[0] = '0';
-        quotient = el_divisator(cpy_numer, cpy_denom);
+        quotient = divide(cpy_numer, cpy_denom);
         quotient[0] = '-';
         return (quotient);
-    } else return (el_calculator(numer, denom));
+    } else return (divide(numer, denom));
 }
 
 int prob_detector(char *denom)
@@ -45,7 +45,7 @@ int prob_detector(char *denom)
     return (84);
 }
 
-char *el_calculator(char *numer, char *denom)
+char *divide(char *numer, char *denom)
 {
     int cpt = 0, c = 1, j = 0, k = 0;
     char *dif = el_cutator(numer, denom);
