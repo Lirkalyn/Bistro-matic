@@ -18,7 +18,7 @@ char *el_soustractor(char *num1, char *num2)
         tmp_num = malloc(sizeof(num2));
         my_strcpy(tmp_num, num1);
         my_revstr(tmp_num);
-        for (int i = l1 ; i != l2 ; i++)
+        for (int i = l1 - 1 ; i != l2 ; i++)
             tmp_num[i] = '0';
         my_revstr(tmp_num);
         return (el_soureturnator(num1, num2, substraction(tmp_num, num2)));
@@ -26,7 +26,7 @@ char *el_soustractor(char *num1, char *num2)
         tmp_num = malloc(sizeof(num1));
         my_strcpy(tmp_num, num2);
         my_revstr(tmp_num);
-        for (int i = l2 ; i != l1 ; i++)
+        for (int i = l2 - 1 ; i != l1 ; i++)
             tmp_num[i] = '0';
         my_revstr(tmp_num);
         return (el_soureturnator(num1, num2, (substraction(tmp_num, num1))));
