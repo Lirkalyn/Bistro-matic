@@ -54,5 +54,6 @@ char *el_soustractor(char *num1, char *num2);
 int isit_smaller(char *nbr1, char *nbr2);
 char *el_soureturnator(char *num1, char *num2, char *result);
 char *el_modulator(char *numer, char *denom);
+char *modulo(char *numer, char *denom);
 
 #endif
