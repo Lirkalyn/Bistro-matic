@@ -14,7 +14,10 @@ char *el_divisator(char *numer, char *denom)
     char *quotient;
     char *cpy_numer = malloc(sizeof(numer));
     char *cpy_denom = malloc(sizeof(denom));
-    if (numer[0] == '-' && denom[0] == '-') {
+    if (prob_detector(denom) == 84) {
+        quotient = "Can't divide by 0";
+        return (quotient);
+    } else if (numer[0] == '-' && denom[0] == '-') {
         my_strcpy(cpy_numer, numer);
         my_strcpy(cpy_denom, denom);
         cpy_numer[0] = '0';
@@ -29,6 +32,17 @@ char *el_divisator(char *numer, char *denom)
         quotient[0] = '-';
         return (quotient);
     } else return (el_calculator(numer, denom));
+}
+
+int prob_detector(char *denom)
+{
+    char error[] = "Can't divide by 0";
+    for (int i = 0 ; denom[i] != '\0' ; i++) {
+        if (denom[i] != '0') {
+            return (0);
+        }
+    }
+    return (84);
 }
 
 char *el_calculator(char *numer, char *denom)
