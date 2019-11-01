@@ -40,11 +40,13 @@ char *el_calculator(char *numer, char *denom)
     for (int j = my_strlen(dif) - 1 ; numer[j] != '\0' ; j++, c++) {
         tmp = malloc(sizeof(char) * my_strlen(denom) * my_strlen(numer) + 1);
         for (int i = 0 ; tmp[0] != '-' ; i++) {
-            tmp = prepare_sub(dif, denom);
+            tmp = el_prepstractor(dif, denom);
             if (tmp[0] != '-')
                 dif = tmp, cpt++;
         }
         quotient[c] = cpt + '0', cpt = 0;
+        if (quotient[c] == 'b')
+            quotient[c] = '0';
         k = my_strlen(dif);
         dif[k] = numer[j + 1];
     }
