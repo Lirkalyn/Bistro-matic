@@ -15,10 +15,7 @@ char *el_divisator(char *numer, char *denom)
     char *cpy_numer = malloc(sizeof(numer));
     char *cpy_denom = malloc(sizeof(denom));
 
-    if (prob_detector(denom) == 84) {
-        quotient = "Can't divide by 0";
-        return (quotient);
-    } else if (numer[0] == '-' && denom[0] == '-') {
+    if (numer[0] == '-' && denom[0] == '-') {
         my_strcpy(cpy_numer, numer);
         my_strcpy(cpy_denom, denom);
         cpy_numer[0] = '0';
@@ -62,14 +59,12 @@ char *divide(char *numer, char *denom)
             tmp = el_soustractor(dif, denom);
             if (tmp[0] != '-')
                 dif = tmp, cpt++;
-        }
-        quotient[c] = cpt + '0', cpt = 0;
+        } quotient[c] = cpt + '0', cpt = 0;
         if (quotient[c] == 'b')
             quotient[c] = '0';
         k = my_strlen(dif);
         dif[k] = numer[j + 1];
-    }
-    return (quotient);
+    } return (quotient);
 }
 
 char *el_cutator(char *numer, char *denom)
