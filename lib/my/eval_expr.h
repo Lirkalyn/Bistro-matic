@@ -46,12 +46,12 @@ char *el_cutator(char *numer, char *denom);
 char *el_divisator(char *numer, char *denom);
 int prob_detector(char *denom);
 char *el_soustractor(char *num1, char *num2);
-char *substraction(char *num1, char *num2);
-char *el_soureturnator(char *num1, char *num2, char *result);
+char *substraction(char *num1, char *num2, char *result);
+char *el_soureturnator(char *num1, char *num2, char *result, char *tmp_n1, char *tmp_n2);
 char *el_modulator(char *numer, char *denom);
 char *modulo(char *numer, char *denom);
 char *el_sumator(char *num1, char *num2);
-char *addsum(char *num1, char *num2);
+char *addsum(char *num1, char *num2, char *result);
 char *sum_result(char *num1, char *num2, char *result);
 
 #endif
