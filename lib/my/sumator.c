@@ -15,7 +15,7 @@ char *el_sumator(char *num1, char *num2)
     int l2 = my_strlen(num2);
     char *tmp_num;
     if (l1 < l2) {
-        tmp_num = malloc(sizeof(num2));
+        tmp_num = malloc(sizeof(char) * l2);
         my_strcpy(tmp_num, num1);
         my_revstr(tmp_num);
         for (int i = l1 - 1 ; i != l2 ; i++)
@@ -23,7 +23,7 @@ char *el_sumator(char *num1, char *num2)
         my_revstr(tmp_num);
         return (sum_result(num1, num2, addsum(tmp_num, num2)));
     } else if (l2 < l1) {
-        tmp_num = malloc(sizeof(num1));
+        tmp_num = malloc(sizeof(char) * l1);
         my_strcpy(tmp_num, num2);
         my_revstr(tmp_num);
         for (int i = l2 - 1 ; i != l1 ; i++)
@@ -39,7 +39,7 @@ char *addsum(char *num1, char *num2)
     int c = 0;
     int carry = 0;
     int i = my_strlen(num1) - 1;
-    char *result = malloc(sizeof(num1) + 2);
+    char *result = malloc(sizeof(char) * i + 1);
     for (i ; i != 0 ; i--, c++) {
         tmp = (num1[i] - '0') + (num2[i] - '0') + carry;
         carry = 0;
