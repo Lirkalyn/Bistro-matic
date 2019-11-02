@@ -33,6 +33,10 @@ void put_zero(char **num, int signes);
 void padofactor(char **num, char *op, int *signes);
 void padosum(char **num, char *op, int *signes);
 void find_a(char *str, int *last_a_pos, int *num_a);
+int is_nbr1_smaller(char *nbr1, char *nbr2);
+char *sub_remain_dig_of_ayaya(char *number1, char *result, int diff, int carry);
+char *sub_my_ayaya(char *number1, char *number2, int diff, int neg);
+char *prepare_sub_my_ayaya(char * number1, char * number2);
 char *el_multiplicator(char *num1, char *num2);
 char *el_additionator(int l, char **res, char *num1, char *num2);
 char *returnator(char *result, char *num1, char *num2);
@@ -46,12 +50,12 @@ char *el_cutator(char *numer, char *denom);
 char *el_divisator(char *numer, char *denom);
 int prob_detector(char *denom);
 char *el_soustractor(char *num1, char *num2);
-char *substraction(char *num1, char *num2, char *result);
-char *el_soureturnator(char *num1, char *num2, char *result, char *tmp_n1, char *tmp_n2);
+char *substraction(char *num1, char *num2);
+char *el_soureturnator(char *num1, char *num2, char *result);
 char *el_modulator(char *numer, char *denom);
 char *modulo(char *numer, char *denom);
 char *el_sumator(char *num1, char *num2);
-char *addsum(char *num1, char *num2, char *result);
+char *addsum(char *num1, char *num2);
 char *sum_result(char *num1, char *num2, char *result);
 
 #endif
