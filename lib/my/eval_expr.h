@@ -52,6 +52,8 @@ int prob_detector(char *denom);
 char *el_soustractor(char *num1, char *num2);
 char *substraction(char *num1, char *num2);
 char *el_soureturnator(char *num1, char *num2, char *result);
+char *numer_and_or_demon_neg(char *numer, char *denom,
+        char *cpy_numer, char *cpy_denom);
 char *el_modulator(char *numer, char *denom);
 char *modulo(char *numer, char *denom);
 char *el_sumator(char *num1, char *num2);
