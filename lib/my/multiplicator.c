@@ -31,8 +31,7 @@ char *el_multiplicator(char *num1, char *num2)
                 res[l][c] = (tmp % 10) + '0', res[l][c + 1] = (tmp / 10) + '0';
             } else res[l][c] = tmp + '0';
         }
-    }
-    return (el_additionator(l - 1, res, num1, num2));
+    } return (el_additionator(l - 1, res, num1, num2));
 }
 
 char *el_additionator(int l, char **res, char *num1, char *num2)
@@ -54,8 +53,7 @@ char *el_additionator(int l, char **res, char *num1, char *num2)
         } else if ( tmp > 9 ) {
             result[i] = (tmp % 10) + '0', result[i + 1] = (tmp / 10) + '0';
         } else result[i] = tmp + '0';
-    }
-    return (returnator(result, num1, num2));
+    } return (returnator(result, num1, num2));
 }
 
 char *returnator(char *result, char *num1, char *num2)
