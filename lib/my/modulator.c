@@ -18,14 +18,16 @@ char *el_modulator(char *numer, char *denom)
         rest = "Can't divide by 0";
         return (rest);
     } if (denom[0] == '-' && numer[0] != '-' ||
-          numer[0] == '-' && denom[0] == '-') {        
+        numer[0] == '-' && denom[0] == '-') {
         my_strcpy(cpy_numer, numer);
         my_strcpy(cpy_denom, denom);
         cpy_numer[0] = '0';
         cpy_denom[0] = '0';
         rest = modulo(cpy_numer, cpy_denom);
-        if (denom[0] == '-' && numer[0] != '-')
+        if (denom[0] == '-' && numer[0] != '-') {
+            my_putstr(denom);
             rest = el_soustractor(rest, denom);
+        }
         else rest[0] = '-';
         return (rest);
     } else return (modulo(numer, denom));
@@ -51,4 +53,11 @@ char *modulo(char *numer, char *denom)
         dif[k] = numer[j + 1];
     }
     return (dif);
+}
+
+int main(void)
+{
+    char *nbr1 = "0731";
+    char *nbr2 = "-34";
+    my_putstr(el_modulator(nbr1, nbr2));
 }
