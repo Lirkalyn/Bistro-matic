@@ -15,17 +15,18 @@ Test(eval_expr, error_handling)
     char *expr = "1+(3+6/42*877+5*-6";
     int size = 19;
 
-    cr_assert(eval_expr(av1, av2, expr, size) == 84);
+    cr_assert_str_eq(eval_expr(av1, av2, expr, size), "84");
 }
 
 Test(parsayaya, normal_parsayaya)
 {
     char *av1 = "0123456789";
     char *av2 = "()+-*/%";
-    char *expr = "1+(3+6/42*877)+5*-6";
-    int size = 19;
+    //char *expr = "1+(3+6/42*877)+5*-6";
+    char *expr = "1+5*(2+2)";
+    int size = 9;
 
-    cr_assert_str_eq(parsayaya(av1, av2, expr, size), "14");
+    cr_assert_str_eq(parsayaya(av1, av2, expr, size), "021");
 }
 
 //Test(brackets, normal_brackets)

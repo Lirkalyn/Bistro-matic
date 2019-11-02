@@ -76,16 +76,3 @@ void fill_num(char *calc_poi, char **num, char *op)
         }
     }
 }
-
-/*void put_zero(char **num, int signes)
-{
-    int i;
-    int j;
-
-    for (i = 0; num[i] != 0; i++) {
-        for (j = 0; num[i][j] != '\0'; j++) {
-            printf("num[%d][%d] = %c\n", i, j, num[i][j]);
-        }
-    }
-}
-*/

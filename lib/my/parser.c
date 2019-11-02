@@ -22,9 +22,7 @@ char *pre_clac_fork(char *calc_poi, int signes)
     op = (char *)malloc((signes + 1) * sizeof(char));
     op[signes] = '\0';
     calc_num_size(calc_poi, num);
-    //put_zero(num, signes);
     fill_num(calc_poi, num, op);
-    //put_zero(num, signes);
     return calc_fork(num, op, signes);
 }
 
@@ -89,7 +87,7 @@ char *parsayaya(char const *av1, char const *av2,
     return str;
 }
 
-int eval_expr(char const *av1, char const *av2,
+char *eval_expr(char const *av1, char const *av2,
         char const *expr, unsigned int size)
 {
     int i;
@@ -102,7 +100,7 @@ int eval_expr(char const *av1, char const *av2,
             brackets--;
     }
     if (brackets != 0)
-        return 84;
+        return "84";
     return parsayaya(av1, av2, expr, size);
 }
 

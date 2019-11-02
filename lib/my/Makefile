@@ -46,7 +46,6 @@ clean	:
 fclean	:	clean
 			rm -f $(NAME)
 			rm -f ../$(NAME)
-			rm -f $(HPATH)*
 
 re		:	fclean $(NAME)
 
