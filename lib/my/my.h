@@ -15,6 +15,6 @@ char *my_revstr(char *str);
 int my_strlen(char const *str);
 int my_atoi(char const *);
 char *show_result(int n, char *result);
-char *my_strcpy(char *dest ,char const *src);
+char *my_strcpy(char *dest, char const *src);
 
 #endif
