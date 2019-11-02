@@ -56,12 +56,19 @@ char *addsum(char *num1, char *num2)
 char *sum_result(char *num1, char *num2, char *result)
 {
     int i = my_strlen(result);
+    char *tmp_num;
     if (num1[0] == '-' && num2[0] == '-')
         result[i] = '-';
     else if (num1[0] == '-' && num2[0] != '-') {
-        return (el_soustractor(num2, num1));
+        tmp_num = malloc(sizeof(char) * my_strlen(num1) + 1);
+        my_strcpy(tmp_num, num1);
+        tmp_num[0] = '0';
+        return (el_soustractor(num2, tmp_num));
     } else if (num2[0] == '-' && num1[0] != '-') {
-        return (el_soustractor(num1, num2));
+        tmp_num = malloc(sizeof(char) * my_strlen(num2) + 1);
+        my_strcpy(tmp_num, num2);
+        tmp_num[0] = '0';
+        return (el_soustractor(num1, tmp_num));
     } else if (result[i - 1] != '-') {
         result[i] = '0';
     } return (my_revstr(result));
