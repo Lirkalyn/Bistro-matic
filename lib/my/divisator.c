@@ -12,8 +12,8 @@
 char *el_divisator(char *numer, char *denom)
 {
     char *quotient;
-    char *cpy_numer = malloc(sizeof(numer));
-    char *cpy_denom = malloc(sizeof(denom));
+    char *cpy_numer = malloc(sizeof(char) * my_strlen(numer) + 1);
+    char *cpy_denom = malloc(sizeof(char) * my_strlen(denom) + 1);
 
     if (numer[0] == '-' && denom[0] == '-') {
         my_strcpy(cpy_numer, numer);
@@ -52,7 +52,7 @@ char *divide(char *numer, char *denom)
     char *dif = el_cutator(numer, denom);
     char *tmp, *quotient;
 
-    quotient = malloc(sizeof(numer) + 2), quotient[0] = '0';
+    quotient = malloc(sizeof(char) * my_strlen(numer) + 2), quotient[0] = '0';
     for (int j = my_strlen(dif) - 1 ; numer[j] != '\0' ; j++, c++) {
         tmp = malloc(sizeof(char) * my_strlen(denom) * my_strlen(numer) + 1);
         for (int i = 0 ; tmp[0] != '-' ; i++) {
