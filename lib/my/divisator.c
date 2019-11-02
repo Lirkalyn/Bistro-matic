@@ -14,6 +14,7 @@ char *el_divisator(char *numer, char *denom)
     char *quotient;
     char *cpy_numer = malloc(sizeof(numer));
     char *cpy_denom = malloc(sizeof(denom));
+
     if (prob_detector(denom) == 84) {
         quotient = "Can't divide by 0";
         return (quotient);
@@ -47,9 +48,13 @@ int prob_detector(char *denom)
 
 char *divide(char *numer, char *denom)
 {
-    int cpt = 0, c = 1, j = 0, k = 0;
+    int cpt = 0;
+    int c = 1;
+    int j = 0;
+    int k = 0;
     char *dif = el_cutator(numer, denom);
     char *tmp, *quotient;
+
     quotient = malloc(sizeof(numer) + 2), quotient[0] = '0';
     for (int j = my_strlen(dif) - 1 ; numer[j] != '\0' ; j++, c++) {
         tmp = malloc(sizeof(char) * my_strlen(denom) * my_strlen(numer) + 1);
@@ -70,6 +75,7 @@ char *divide(char *numer, char *denom)
 char *el_cutator(char *numer, char *denom)
 {
     char *nbr_cut;
+
     nbr_cut = malloc(sizeof(char) * my_strlen(denom) * my_strlen(numer) + 1);
     if (my_strlen(numer) < my_strlen(denom)) {
         nbr_cut[0] = '0';
