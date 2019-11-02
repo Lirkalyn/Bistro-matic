@@ -15,7 +15,7 @@ char *el_soustractor(char *num1, char *num2)
     int l2 = my_strlen(num2);
     char *tmp_num;
     if (l1 < l2) {
-        tmp_num = malloc(sizeof(num2));
+        tmp_num = malloc(sizeof(char) * l2 + 2);
         my_strcpy(tmp_num, num1);
         my_revstr(tmp_num);
         for (int i = l1 - 1 ; i != l2 ; i++)
@@ -23,7 +23,7 @@ char *el_soustractor(char *num1, char *num2)
         my_revstr(tmp_num);
         return (el_soureturnator(num1, num2, substraction(tmp_num, num2)));
     } else if (l2 < l1) {
-        tmp_num = malloc(sizeof(num1));
+        tmp_num = malloc(sizeof(char) * l1 + 2);
         my_strcpy(tmp_num, num2);
         my_revstr(tmp_num);
         for (int i = l2 - 1 ; i != l1 ; i++)
@@ -40,8 +40,8 @@ char *el_soustractor(char *num1, char *num2)
 char *el_soureturnator(char *num1, char *num2, char *result)
 {
     int i = my_strlen(result);
-    char *tmp_n1 = malloc(sizeof(num1));
-    char *tmp_n2 = malloc(sizeof(num2));
+    char *tmp_n1 = malloc(sizeof(char) * my_strlen(num1) + 1);
+    char *tmp_n2 = malloc(sizeof(char) * my_strlen(num2) + 1);
     my_strcpy(tmp_n1, num1);
     my_strcpy(tmp_n2, num2);
     tmp_n1[0] = '0';
@@ -79,7 +79,7 @@ char *substraction(char *num1, char *num2)
     int carry = 0;
     int i = my_strlen(num1) - 1;
     char *result;
-    result = malloc(sizeof(num1) + 1);
+    result = malloc(sizeof(char) * i + 2);
     for (i ; i != 0 ; i--, c++) {
         tmp = (num2[i] - '0') - ((num1[i] - '0') + carry);
         carry = 0;
