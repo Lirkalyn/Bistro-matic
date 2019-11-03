@@ -28,15 +28,15 @@ Test(main, first_pos_second_neg_div)
     cr_assert_str_eq(eval_expr(av1, av2, expr, size), "-10837");
 }
 
-//Test(main, first_neg_second_pos_div)
-//{
-//    char *av1 = "0123456789";
-//    char *av2 = "()+-*/%";
-//    char expr[47] = "-64513168541538651/9653131985614198645198561431";
-//    int size = 47;
+Test(main, first_neg_second_pos_div)
+{
+    char *av1 = "0123456789";
+    char *av2 = "()+-*/%";
+    char expr[47] = "-64513168541538651/9653131985614198645198561431";
+    int size = 47;
 
-//    cr_expect_str_eq(eval_expr(av1, av2, expr, size), "0");
-//}
+    cr_expect_str_eq(eval_expr(av1, av2, expr, size), "0");
+}
 
 Test(main, all_neg_div)
 {
@@ -49,13 +49,13 @@ Test(main, all_neg_div)
         "010");
 }
 
-//Test(main, all_neg_reverse_div)
-//{
-//    char *av1 = "0123456789";
-//    char *av2 = "()+-*/%";
-//    char expr[44] = "-61598846136451326841/-631684518461431598651";
-//    int size = 44;
+Test(main, all_neg_reverse_div)
+{
+    char *av1 = "0123456789";
+    char *av2 = "()+-*/%";
+    char expr[44] = "-61598846136451326841/-631684518461431598651";
+    int size = 44;
 
-//    cr_expect_str_eq(eval_expr(av1, av2, expr, size),
-//        "0");
-//}
+    cr_expect_str_eq(eval_expr(av1, av2, expr, size),
+        "0");
+}

@@ -59,8 +59,9 @@ char *brackets(char *expr, int len)
     find_bra(expr, &first_close_bra, &find, &last_open_bra);
     if (first_close_bra == -1)
         return expr;
-    calc_poi = (char *)malloc((first_close_bra - last_open_bra) * sizeof(char));
+    calc_poi = malloc((first_close_bra - last_open_bra + 1) * sizeof(char));
     calc_poi[(first_close_bra - last_open_bra - 1)] = '\0';
+    calc_poi[(first_close_bra - last_open_bra)] = '\0';
     fill_calc_poi(last_open_bra, first_close_bra, calc_poi, expr);
     nbr_signes(calc_poi, &signes);
     res = pre_clac_fork(calc_poi, signes);
