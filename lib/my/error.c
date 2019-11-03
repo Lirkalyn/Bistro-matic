@@ -29,8 +29,9 @@ int two_identical_digits(char *base)
 {
     int i;
     int j;
-    char *cpy_base = malloc(sizeof(char) * (my_strlen(base) + 1));
+    char *cpy_base = malloc(sizeof(char) * (my_strlen(base) + 2));
 
+    cpy_base[(my_strlen(base) + 1)] = '\0';
     my_strcpy(cpy_base, base);
     for (i = 0; base[i] != '\0'; i++) {
         for (j = i + 1; cpy_base[j] != '\0'; j++) {

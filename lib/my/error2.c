@@ -14,7 +14,9 @@ int divide_by_zero(char *str)
     int i;
 
     for (i = 0; str[i] != '\0'; i++) {
-        if (str[i] == '/' || str[i] == '%' && str[i + 1] == '0')
+        if (str[i] == '/' && str[i + 1] == '0')
+            return 1;
+        else if (str[i] == '%' && str[i + 1] == '0')
             return 1;
     }
     return 0;
@@ -25,6 +27,8 @@ int all_error(char *av1, char *av2, char *expr)
     if (operator_in_the_base(av1))
         return 1;
     if (two_identical_digits(av1))
+        return 1;
+    if (two_identical_digits(av2))
         return 1;
     if (invalid_expression(expr))
         return 1;
