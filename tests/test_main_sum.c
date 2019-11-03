@@ -7,8 +7,6 @@
 
 #include <criterion/criterion.h>
 #include "../include/eval_expr.h"
-//#include "../include/bistromatic.h"
-//#include "../include/my.h"
 
 Test(main, all_pos_sum)
 {
