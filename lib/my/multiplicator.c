@@ -13,20 +13,19 @@ char *el_multiplicator(char *num1, char *num2)
 {
     char **res;
     int l = 0;
-    int carry = 0;
-    int tmp = 0;
 
-    if ( my_strlen(num1) > my_strlen(num2) )
-        res = malloc(sizeof(char *) * my_strlen(num1) + 2);
-    else res = malloc(sizeof(char *) * my_strlen(num2) + 2);
-    for ( int i = my_strlen(num1) - 1 ; i != 0 ; i--, l++ ) {
+    res = malloc(sizeof(char *) * my_strlen(num2) + my_strlen(num1));
+    if (my_strlen(num1) - 1 == 0) {
+        res[l] = "00";
+        return (res[l]);
+    } for ( int i = my_strlen(num1) - 1, ca = 0, tmp = 0 ; i != 0 ; i--, l++ ) {
         res[l] = malloc(sizeof(char *) * my_strlen(num1) + my_strlen(num2) + 2);
         for ( int k = 0 ; k != l ; k++ )
             res[l][k] = '0';
         for ( int j = my_strlen(num2) - 1, c = l ; j != 0 ; j--, c++ ) {
-            tmp = (num1[i] - '0') * (num2[j] - '0') + carry, carry = 0;
+            tmp = (num1[i] - '0') * (num2[j] - '0') + ca, ca = 0;
             if ( tmp > 9 && j != 1) {
-                carry = tmp / 10, res[l][c] = (tmp % 10) + '0';
+                ca = tmp / 10, res[l][c] = (tmp % 10) + '0';
             } else if ( tmp > 9 ) {
                 res[l][c] = (tmp % 10) + '0', res[l][c + 1] = (tmp / 10) + '0';
             } else res[l][c] = tmp + '0';
