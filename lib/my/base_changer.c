@@ -5,6 +5,8 @@
 ** change custom base and operand to have a clean base and operand
 */
 
+#include "my.h";
+
 void string_changer(char *str, char *operand, int size)
 {
     int i;
@@ -33,4 +35,20 @@ void base_changer(char *str, char *base, int size)
             }
         }
     }
+}
+
+void rev_base_changer(char *str, char *base)
+{
+    int i;
+    int j;
+    char *normal_base = "0123456789";
+
+    for (i = 0; i < my_strlen(str); i++) {
+        for (j = 0; j < 10; j++) {
+            if (str[i] == normal_base[j]) {
+                str[i] = base[j];
+            }
+        }
+    }
+    return (str);
 }

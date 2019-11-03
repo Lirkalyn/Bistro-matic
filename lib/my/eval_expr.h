@@ -57,5 +57,6 @@ char *addsum(char *num1, char *num2);
 char *sum_result(char *num1, char *num2, char *result);
 void string_changer(char *str, char *operand, int size);
 void base_changer(char *str, char *base, int size);
+void rev_base_changer(char *str, char *base);
 
 #endif
