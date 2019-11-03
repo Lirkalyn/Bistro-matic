@@ -60,6 +60,7 @@ char *two_identical_digits(char *base);
 char *invalid_expression(char *str);
 char *unknown_digit(char *str);
 char *not_enought_brackets(char *str);
+char *divide_by_zero(char *str);
 
 #endif
 

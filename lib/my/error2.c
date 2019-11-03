@@ -7,6 +7,7 @@
 
 #include "my.h"
 #include "bistromatic.h"
+#include "error.h"
 
 int divide_by_zero(char *str)
 {
@@ -19,16 +20,18 @@ int divide_by_zero(char *str)
     return 0;
 }
 
-char *all_error(char *av1, char *av2, char *expr)
+int all_error(char *av1, char *av2, char *expr)
 {
-    int res = 0;
-
-    res = operator_in_the_base(av1);
-    res = two_identical_digits(av1);
-    res = invalid_expression(expr);
-    res = unknown_digit(expr);
-    res = not_enought_brackets(expr);
-    res = divide_by_zero(expr);
-    if (res == 1)
-        return (SYNTAX_ERROR_MSG);
+    if (operator_in_the_base(av1))
+        return 1;
+    if (two_identical_digits(av1))
+        return 1;
+    if (invalid_expression(expr))
+        return 1;
+    if (unknown_digit(expr))
+        return 1;
+    if (not_enought_brackets(expr))
+        return 1;
+    if (divide_by_zero(expr))
+        return 1;
 }

@@ -42,6 +42,7 @@ $(NAME)	:	$(OBJ)
 			cp ./my.h $(HPATH)
 			cp ./bistromatic.h $(HPATH)
 			cp ./eval_expr.h $(HPATH)
+			cp ./error.h $(HPATH)
 
 clean	:
 			rm -f $(OBJ)

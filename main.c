@@ -10,6 +10,7 @@
 #include <string.h>
 #include "include/bistromatic.h"
 #include "include/my.h"
+#include "include/error.h"
 
 static char *get_expr(unsigned int size)
 {
@@ -63,8 +64,11 @@ int main(int ac, char **av)
     check_ops(av[2]);
     size = my_atoi(av[3]);
     expr = get_expr(size);
-    string_changer(expr, av[2], size);
-    base_changer(expr, av[1], size);
-    my_putstr(eval_expr(av[1], av[2], expr, size));
+    convert(expr, av[2], size, av[1]);
+    if (all_error(av[1], av[2], expr)) {
+        my_putstr(SYNTAX_ERROR_MSG);
+        exit(EXIT_BASE);
+    }
+    my_putstr(rev_base_changer(eval_expr(av[1], av[2], expr, size), av[1]));
     return (EXIT_SUCCESS);
 }

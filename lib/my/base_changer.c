@@ -37,7 +37,7 @@ void base_changer(char *str, char *base, int size)
     }
 }
 
-void rev_base_changer(char *str, char *base)
+char *rev_base_changer(char *str, char *base)
 {
     int i;
     int j;
@@ -50,4 +50,11 @@ void rev_base_changer(char *str, char *base)
             }
         }
     }
+    return str;
+}
+
+void convert(char *str, char *operand, int size, char *base)
+{
+    string_changer(str, operand, size);
+    base_changer(str, base, size);
 }
