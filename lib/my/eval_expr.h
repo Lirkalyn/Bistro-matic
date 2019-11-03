@@ -44,7 +44,7 @@ char *replace_expr(char *str, char *res);
 void find_a(char *str, int *last_a_pos, int *num_a);
 int clean(char *str);
 char *complete_res(char const *expr, char *res, unsigned int size);
-char *l1_smaller_than_l2(char *tmp_num, char *num1, int l1, int l2);
+char *l1_smaller_than_l2(char *tmp_num, char *num1, char *num2);
 char *el_soustractor(char *num1, char *num2);
 char *el_soureturnator(char *num1, char *num2, char *result);
 char *substraction(char *num1, char *num2);
