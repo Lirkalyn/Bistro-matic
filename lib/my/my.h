@@ -16,5 +16,8 @@ int my_strlen(char const *str);
 int my_atoi(char const *);
 char *show_result(int n, char *result);
 char *my_strcpy(char *dest, char const *src);
+void string_changer(char *str, char *operand, int size);
+void base_changer(char *str, char *base, int size);
 
 #endif
+

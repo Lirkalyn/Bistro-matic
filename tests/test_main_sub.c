@@ -25,7 +25,7 @@ Test(main, first_pos_second_neg_sub)
     char expr[8] = "852--951";
     int size = 8;
 
-    cr_assert_str_eq(eval_expr(av1, av2, expr, size), "01803");
+    cr_assert_str_eq(eval_expr(av1, av2, expr, size), "1803");
 }
 
 Test(main, first_neg_second_pos_sub)
@@ -45,7 +45,7 @@ Test(main, all_neg_sub)
     char expr[35] = "-7894562169585--7854129632147841695";
     int size = 35;
 
-    cr_assert_str_eq(eval_expr(av1, av2, expr, size), "07854121737585672110");
+    cr_assert_str_eq(eval_expr(av1, av2, expr, size), "7854121737585672110");
 }
 
 Test(main, all_neg_reverse_sub)

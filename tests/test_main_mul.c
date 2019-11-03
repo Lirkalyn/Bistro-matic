@@ -16,7 +16,7 @@ Test(main, all_pos_mul)
     int size = 26;
 
     cr_assert_str_eq(eval_expr(av1, av2, expr, size),
-        "04729396941544362743313732");
+        "4729396941544362743313732");
 }
 
 Test(main, first_pos_second_neg_mul)
@@ -49,7 +49,7 @@ Test(main, all_neg_mul)
     int size = 47;
 
     cr_assert_str_eq(eval_expr(av1, av2, expr, size),
-        "030210912413617615285841371031273862037328304");
+        "30210912413617615285841371031273862037328304");
 }
 
 Test(main, all_neg_reverse_mul)
@@ -60,5 +60,5 @@ Test(main, all_neg_reverse_mul)
     int size = 47;
 
     cr_assert_str_eq(eval_expr(av1, av2, expr, size),
-        "030210912413617615285841371031273862037328304");
+        "30210912413617615285841371031273862037328304");
 }

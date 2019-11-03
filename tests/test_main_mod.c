@@ -15,7 +15,7 @@ Test(main, all_pos_mod)
     char expr[31] = "6541986451985461%68451865416845";
     int size = 31;
 
-    cr_assert_str_eq(eval_expr(av1, av2, expr, size), "039059237385186");
+    cr_assert_str_eq(eval_expr(av1, av2, expr, size), "39059237385186");
 }
 
 Test(main, first_pos_second_neg_mod)
@@ -35,7 +35,7 @@ Test(main, first_neg_second_pos_mod)
     char expr[35] = "-6835416451986541864%68418561986451";
     int size = 35;
 
-    cr_assert_str_eq(eval_expr(av1, av2, expr, size), "08401831831742");
+    cr_assert_str_eq(eval_expr(av1, av2, expr, size), "8401831831742");
 }
 
 Test(main, all_neg_mod)

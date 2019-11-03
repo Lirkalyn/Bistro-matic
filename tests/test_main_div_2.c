@@ -20,10 +20,10 @@ Test(main, all_neg_div_bug)
 
 Test(main, objectif_one_div)
 {
-    char *av1 = "0123456789";
+    char *av1 = "123456789";
     char *av2 = "()+-*/%";
     char expr[3] = "5/5";
     int size = 3;
 
-    cr_assert_str_eq(eval_expr(av1, av2, expr, size), "01");
+    cr_assert_str_eq(eval_expr(av1, av2, expr, size), "1");
 }

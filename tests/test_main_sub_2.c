@@ -15,7 +15,7 @@ Test(main, all_neg_same_lenght_sub)
     char expr[31] = "-78988524552123--96338524521456";
     int size = 31;
 
-    cr_assert_str_eq(eval_expr(av1, av2, expr, size), "017349999969333");
+    cr_assert_str_eq(eval_expr(av1, av2, expr, size), "17349999969333");
 }
 
 Test(main, objectif_zero_sub)

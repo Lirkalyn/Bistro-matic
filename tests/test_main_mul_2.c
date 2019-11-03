@@ -16,7 +16,7 @@ Test(main, all_pos_same_lenght_mul)
     int size = 23;
 
     cr_assert_str_eq(eval_expr(av1, av2, expr, size),
-        "04729396941498848656952");
+        "4729396941498848656952");
 }
 
 Test(main, all_neg_same_lenght_mul)
@@ -27,7 +27,7 @@ Test(main, all_neg_same_lenght_mul)
     int size = 27;
 
     cr_assert_str_eq(eval_expr(av1, av2, expr, size),
-        "0319160520730043964749360");
+        "319160520730043964749360");
 }
 
 Test(main, first_neg_second_pos_same_lenght_mul)

@@ -17,7 +17,7 @@ Test(main, all_pos_sum)
     char expr[3] = "3+6";
     int size = 3;
 
-    cr_assert_str_eq(eval_expr(av1, av2, expr, size), "09");
+    cr_assert_str_eq(eval_expr(av1, av2, expr, size), "9");
 }
 
 Test(main, first_pos_second_neg_sum)
@@ -37,7 +37,7 @@ Test(main, first_neg_second_pos_sum)
     char expr[26] = "-761964949+751586275684685";
     int size = 26;
 
-    cr_assert_str_eq(eval_expr(av1, av2, expr, size), "0751585513719736");
+    cr_assert_str_eq(eval_expr(av1, av2, expr, size), "751585513719736");
 }
 
 Test(main, all_neg_sum)

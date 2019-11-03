@@ -27,8 +27,6 @@ char *el_multiplicator(char *num1, char *num2);
 char *el_additionator(int l, char **res, char *num1, char *num2);
 char *returnator(char *result, char *num1, char *num2);
 void my_put_nbr_neg(int *nb, _Bool *over);
-int my_put_nbr(int nb); // aussi dans my.h ???
-void my_putchar(char c); // aussi dans my.h ???
 void fill_calc_poi(int last_open_bra, int first_close_bra,
     char *calc_poi, char *expr);
 void fill_expr_w_a(int last_open_bra, int first_close_bra, char *expr);
@@ -44,6 +42,8 @@ char *eval_expr(char const *av1, char const *av2,
 void fill_new_str(char *str, char *res, char *new_str, int res_size);
 char *replace_expr(char *str, char *res);
 void find_a(char *str, int *last_a_pos, int *num_a);
+int clean(char *str);
+char *complete_res(char const *expr, char *res, unsigned int size);
 char *l1_smaller_than_l2(char *tmp_num, char *num1, int l1, int l2);
 char *el_soustractor(char *num1, char *num2);
 char *el_soureturnator(char *num1, char *num2, char *result);
@@ -57,3 +57,4 @@ char *addsum(char *num1, char *num2);
 char *sum_result(char *num1, char *num2, char *result);
 
 #endif
+

@@ -78,13 +78,9 @@ char *parsayaya(char const *av1, char const *av2,
     char *res;
     char *str;
 
-    res = (char *)malloc((size + 3) * sizeof(char));
-    res[0] = '(';
-    res[(size + 1)] = ')';
-    res[(size + 2)] = '\0';
-    for (i = 0; i < size; i++)
-        res[i + 1] = expr[i];
+    res = complete_res(expr, res, size);
     str = brackets(res, size);
+    clean(str);
     return str;
 }
 
@@ -93,7 +89,7 @@ char *eval_expr(char const *av1, char const *av2,
 {
     int i;
     int brackets = 0;
-
+/*
     for (i = 0; expr[i] != '\0'; i++) {
         if (expr[i] == '(')
             brackets++;
@@ -101,7 +97,6 @@ char *eval_expr(char const *av1, char const *av2,
             brackets--;
     }
     if (brackets != 0)
-        return "84";
+        return "84";*/
     return parsayaya(av1, av2, expr, size);
 }
-

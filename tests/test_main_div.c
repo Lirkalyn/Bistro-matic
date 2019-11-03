@@ -15,7 +15,7 @@ Test(main, all_pos_div)
     char expr[35] = "6599316643684158513/664316435168451";
     int size = 35;
 
-    cr_assert_str_eq(eval_expr(av1, av2, expr, size), "09933");
+    cr_assert_str_eq(eval_expr(av1, av2, expr, size), "9933");
 }
 
 Test(main, first_pos_second_neg_div)
@@ -46,7 +46,7 @@ Test(main, all_neg_div)
     int size = 44;
 
     cr_assert_str_eq(eval_expr(av1, av2, expr, size),
-        "010");
+        "10");
 }
 
 Test(main, all_neg_reverse_div)
