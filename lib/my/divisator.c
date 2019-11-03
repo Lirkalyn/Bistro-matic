@@ -15,7 +15,7 @@ char *el_divisator(char *numer, char *denom)
     char *cpy_numer = malloc(sizeof(char) * my_strlen(numer) + 1);
     char *cpy_denom = malloc(sizeof(char) * my_strlen(denom) + 1);
 
-    if (nbr1_smaller(numer, denom) == 1)
+    if (nbr1_smaller(numer, denom) == 1 && my_strlen(numer) <= my_strlen(denom))
         return (quotient);
     else if (numer[0] == '-' && denom[0] == '-') {
         my_strcpy(cpy_numer, numer);
