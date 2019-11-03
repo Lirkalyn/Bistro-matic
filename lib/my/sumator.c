@@ -11,23 +11,23 @@
 
 char *el_sumator(char *num1, char *num2)
 {
-    int l1 = my_strlen(num1);
-    int l2 = my_strlen(num2);
     char *tmp_num;
 
-    if (l1 < l2) {
-        tmp_num = malloc(sizeof(char) * l2 + 1);
+    if (my_strlen(num1) < my_strlen(num2)) {
+        tmp_num = malloc(sizeof(char) * my_strlen(num2) + 1);
+        tmp_num[my_strlen(num2)] = '\0';
         my_strcpy(tmp_num, num1);
         my_revstr(tmp_num);
-        for (int i = l1 - 1 ; i != l2 ; i++)
+        for (int i = my_strlen(num1) - 1 ; i != my_strlen(num2) ; i++)
             tmp_num[i] = '0';
         my_revstr(tmp_num);
         return (sum_result(num1, num2, addsum(tmp_num, num2)));
-    } else if (l2 < l1) {
-        tmp_num = malloc(sizeof(char) * l1 + 1);
+    } else if (my_strlen(num2) < my_strlen(num1)) {
+        tmp_num = malloc(sizeof(char) * my_strlen(num1) + 1);
+        tmp_num[my_strlen(num1)] = '\0';
         my_strcpy(tmp_num, num2);
         my_revstr(tmp_num);
-        for (int i = l2 - 1 ; i != l1 ; i++)
+        for (int i = my_strlen(num2) - 1 ; i != my_strlen(num1) ; i++)
             tmp_num[i] = '0';
         my_revstr(tmp_num);
         return (sum_result(num1, num2, addsum(tmp_num, num1)));
@@ -57,22 +57,25 @@ char *addsum(char *num1, char *num2)
 
 char *sum_result(char *num1, char *num2, char *result)
 {
-    int i = my_strlen(result);
     char *tmp_num;
 
-    if (num1[0] == '-' && num2[0] == '-')
-        result[i] = '-';
-    else if (num1[0] == '-' && num2[0] != '-') {
+    if (num1[0] == '-' && num2[0] != '-') {
         tmp_num = malloc(sizeof(char) * my_strlen(num1) + 1);
+        tmp_num[my_strlen(num1) + 1] = '\0';
         my_strcpy(tmp_num, num1);
         tmp_num[0] = '0';
         return (el_soustractor(num2, tmp_num));
     } else if (num2[0] == '-' && num1[0] != '-') {
         tmp_num = malloc(sizeof(char) * my_strlen(num2) + 1);
+        tmp_num[my_strlen(num2) + 1] = '\0';
         my_strcpy(tmp_num, num2);
         tmp_num[0] = '0';
         return (el_soustractor(num1, tmp_num));
-    } else if (result[i - 1] != '-') {
-        result[i] = '0';
-    } return (my_revstr(result));
+    } else {
+        if (num1[0] == '-' && num2[0] == '-')
+            result[my_strlen(result)] = '-';
+        else result[my_strlen(result)] = '0';
+        my_revstr(result);
+        result[(my_strlen(result))] = '\0';
+    } return (result);
 }
