@@ -55,5 +55,7 @@ char *num1_smaller_than_num2(int i, char *result);
 char *el_sumator(char *num1, char *num2);
 char *addsum(char *num1, char *num2);
 char *sum_result(char *num1, char *num2, char *result);
+void string_changer(char *str, char *operand, int size);
+void base_changer(char *str, char *base, int size);
 
 #endif
