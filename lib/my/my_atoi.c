@@ -7,12 +7,16 @@
 
 int my_atoi(char *lol)
 {
-    int i, l;
-    int a = 0, b = 1;
+    int i;
+    int l;
+    int a = 0;
+    int b = 1;
+    int j;
+
     if ( lol[0] == '-' )
         i = 1, l = 2;
     else i = 0, l = 1;
-    int j = i;
+    j = i;
     for ( i ; lol[i] != '\0' ; i++ );
     for ( int k = 0 ; k != i - l ; k++ )
         b = b * 10;

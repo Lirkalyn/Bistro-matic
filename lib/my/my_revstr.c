@@ -5,21 +5,41 @@
 ** invert string
 */
 
+#include <stddef.h>
+
+int check_error2(char *src)
+{
+    if (src == NULL)
+        return (1);
+    return (0);
+}
+
+int my_strlen2(char const *str)
+{
+    int i;
+
+    for (i = 0; str[i] != '\0'; i++);
+    return (i);
+}
+
 char *my_revstr(char *str)
 {
-    int i, u;
-    for ( i = 0 ; str[i] != '\0' ; i++ );
-    int r = i;
-    char arr[r];
-    for ( u = 0 ; u != r ; u++ )
-    {
-        i = i - 1;
-        arr[u] = str[i];
-    }
-    for ( u = 0 ; u != r ; u++ )
-    {
-        str[i] = arr[u];
-        i = i + 1;
+    int i;
+    int len;
+    char tmp;
+
+    if (check_error2(str)) {
+        return (NULL);
+    } else {
+        len = (my_strlen2(str) - 1);
+        for (i = 0; str[i] != '\0'; i++)
+        {
+            tmp = str[i];
+            str[i] = str[(len - i)];
+            str[(len - i)] = tmp;
+            if (i == (len / 2))
+                return (str);
+        }
     }
     return (str);
 }

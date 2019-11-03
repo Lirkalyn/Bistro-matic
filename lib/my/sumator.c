@@ -14,6 +14,7 @@ char *el_sumator(char *num1, char *num2)
     int l1 = my_strlen(num1);
     int l2 = my_strlen(num2);
     char *tmp_num;
+
     if (l1 < l2) {
         tmp_num = malloc(sizeof(char) * l2 + 1);
         my_strcpy(tmp_num, num1);
@@ -40,6 +41,7 @@ char *addsum(char *num1, char *num2)
     int carry = 0;
     int i = my_strlen(num1) - 1;
     char *result = malloc(sizeof(char) * i + 2);
+
     for (i ; i != 0 ; i--, c++) {
         tmp = (num1[i] - '0') + (num2[i] - '0') + carry;
         carry = 0;
@@ -57,6 +59,7 @@ char *sum_result(char *num1, char *num2, char *result)
 {
     int i = my_strlen(result);
     char *tmp_num;
+
     if (num1[0] == '-' && num2[0] == '-')
         result[i] = '-';
     else if (num1[0] == '-' && num2[0] != '-') {

@@ -9,9 +9,9 @@
 #ifndef EVAL_H_
 #define EVAL_H_
 
-char *el_divisator(char *numer, char *denom);
-char *divide(char *numer, char *denom);
-char *el_cutator(char *numer, char *denom);
+char *el_divisator(char *num, char *denom);
+char *divide(char *num, char *denom);
+char *el_cutator(char *num, char *denom);
 int nbr1_smaller(char *nbr1, char *nbr2);
 int factor(char **num, char operand, int signes, int pos);
 int sum(char **num, char operand, int signes, int pos);
@@ -19,10 +19,10 @@ char *calc_fork(char **num, char *op, int signes);
 int nbr_signes(char *calc, int *signes);
 void padofactor(char **num, char *op, int *signes);
 void padosum(char **num, char *op, int *signes);
-char *numer_and_or_demon_neg(char *numer, char *denom,
-    char *cpy_numer, char *cpy_denom);
-char *el_modulator(char *numer, char *denom);
-char *modulo(char *numer, char *denom);
+char *num_and_or_demon_neg(char *num, char *denom,
+    char *cpy_num, char *cpy_denom);
+char *el_modulator(char *num, char *denom);
+char *modulo(char *num, char *denom);
 char *el_multiplicator(char *num1, char *num2);
 char *el_additionator(int l, char **res, char *num1, char *num2);
 char *returnator(char *result, char *num1, char *num2);
