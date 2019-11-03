@@ -35,6 +35,8 @@ char *calc_fork(char **num, char *op, int signes)
 
     padofactor(num, op, &signes);
     padosum(num, op, &signes);
+    if (op[0] != '\0')
+        calc_fork(num, op, signes);
     return num[0];
 }
 

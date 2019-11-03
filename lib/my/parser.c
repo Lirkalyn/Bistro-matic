@@ -88,15 +88,5 @@ char *eval_expr(char const *av1, char const *av2,
         char const *expr, unsigned int size)
 {
     int i;
-    int brackets = 0;
-/*
-    for (i = 0; expr[i] != '\0'; i++) {
-        if (expr[i] == '(')
-            brackets++;
-        else if (expr[i] == ')')
-            brackets--;
-    }
-    if (brackets != 0)
-        return "84";*/
     return parsayaya(av1, av2, expr, size);
 }

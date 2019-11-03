@@ -9,7 +9,7 @@
 #include "bistromatic.h"
 #include <stdlib.h>
 
-char *operator_in_the_base(char *base)
+int operator_in_the_base(char *base)
 {
     int i;
 
@@ -19,12 +19,13 @@ char *operator_in_the_base(char *base)
         || base[i] == '/' || base[i] == '%'
         || base[i] == '(' || base[i] == ')'
         || base[i] == '-') {
-            return (SYNTAX_ERROR_MSG);
+            return 1;
         }
     }
+    return 0;
 }
 
-char *two_identical_digits(char *base)
+int two_identical_digits(char *base)
 {
     int i;
     int j;
@@ -34,23 +35,25 @@ char *two_identical_digits(char *base)
     for (i = 0; base[i] != '\0'; i++) {
         for (j = i + 1; cpy_base[j] != '\0'; j++) {
             if (base[i] == cpy_base[j]) {
-                return (SYNTAX_ERROR_MSG);
+                return 1;
             }
         }
     }
+    return 0;
 }
 
-char *invalid_expression(char *str)
+int invalid_expression(char *str)
 {
     int i;
 
     for (i = 0; str[i] != '\0'; i++) {
         if (str[i] >= '0' && str[i] <= '9' && str[i + 1] == '(')
-            return (SYNTAX_ERROR_MSG);
+            return 1;
     }
+    return 0;
 }
 
-char *unknown_digit(char *str)
+int unknown_digit(char *str)
 {
     int i;
 
@@ -59,11 +62,12 @@ char *unknown_digit(char *str)
         || str[i] == '-' || str[i] == '*' || str[i] == '/'
         || str[i] == '%' || str[i] == '(' || str[i] == ')');
         else
-            return (SYNTAX_ERROR_MSG);
+            return 1;
     }
+    return 0;
 }
 
-char *not_enought_brackets(char *str)
+int not_enought_brackets(char *str)
 {
     int i;
     int brackets = 0;
@@ -75,5 +79,6 @@ char *not_enought_brackets(char *str)
             brackets--;
     }
     if (brackets != 0)
-        return (SYNTAX_ERROR_MSG);
+        return 1;
+    return 0;
 }
