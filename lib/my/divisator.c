@@ -11,11 +11,13 @@
 
 char *el_divisator(char *numer, char *denom)
 {
-    char *quotient;
+    char *quotient = "0";
     char *cpy_numer = malloc(sizeof(char) * my_strlen(numer) + 1);
     char *cpy_denom = malloc(sizeof(char) * my_strlen(denom) + 1);
 
-    if (numer[0] == '-' && denom[0] == '-') {
+    if (nbr1_smaller(numer, denom) == 1)
+        return (quotient);
+    else if (numer[0] == '-' && denom[0] == '-') {
         my_strcpy(cpy_numer, numer);
         my_strcpy(cpy_denom, denom);
         cpy_numer[0] = '0';
@@ -30,17 +32,6 @@ char *el_divisator(char *numer, char *denom)
         quotient[0] = '-';
         return (quotient);
     } else return (divide(numer, denom));
-}
-
-int prob_detector(char *denom)
-{
-    char error[] = "Can't divide by 0";
-    for (int i = 0 ; denom[i] != '\0' ; i++) {
-        if (denom[i] != '0') {
-            return (0);
-        }
-    }
-    return (84);
 }
 
 char *divide(char *numer, char *denom)

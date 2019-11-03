@@ -10,7 +10,6 @@
 #define EVAL_H_
 
 char *el_divisator(char *numer, char *denom);
-int prob_detector(char *denom);
 char *divide(char *numer, char *denom);
 char *el_cutator(char *numer, char *denom);
 int nbr1_smaller(char *nbr1, char *nbr2);
