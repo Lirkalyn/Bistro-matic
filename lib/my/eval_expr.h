@@ -55,6 +55,11 @@ char *num1_smaller_than_num2(int i, char *result);
 char *el_sumator(char *num1, char *num2);
 char *addsum(char *num1, char *num2);
 char *sum_result(char *num1, char *num2, char *result);
+char *operator_in_the_base(char *base);
+char *two_identical_digits(char *base);
+char *invalid_expression(char *str);
+char *unknown_digit(char *str);
+char *not_enought_brackets(char *str);
 
 #endif
 

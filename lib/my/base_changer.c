@@ -5,7 +5,7 @@
 ** change custom base and operand to have a clean base and operand
 */
 
-#include "my.h";
+#include "my.h"
 
 void string_changer(char *str, char *operand, int size)
 {
@@ -50,5 +50,4 @@ void rev_base_changer(char *str, char *base)
             }
         }
     }
-    return (str);
 }

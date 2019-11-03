@@ -26,7 +26,8 @@ SRC		=	my_putchar.c	\
 			sumator.c		\
 			my_strcpy.c		\
 			soustractor2.c	\
-			base_changer.c
+			base_changer.c	\
+			error.c
 
 HPATH	=	./../../include/
 
